@@ -1,0 +1,42 @@
+.container {
+    background-color: lightgray;
+    padding: 50px;
+    font-size: 50px;
+    text-align: center;
+    height: 80vh;
+    font-family: 'MV-Boli', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+
+button {
+    font-size: 25px;
+    width: 150px;
+}
+
+.player-result {
+    color: blue;
+}
+
+.computer-result {
+    color: red;
+}
+
+.player-score {
+    color: blue;
+    font-size: 25px;
+}
+
+.computer-score {
+    color: red;
+    font-size: 25px;
+}
+
+.refresh {
+    width: 250px;
+}
+
