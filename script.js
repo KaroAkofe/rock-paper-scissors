@@ -32,9 +32,20 @@ const playerWin = "You won the game!";
 const computerWin = "Computer won the game!";
 const tieGame = "You both have the same score. It's a tie";
 
+
 //event listeners
 buttons.forEach(button => button.addEventListener('click', function playGame() {
-    if(playerScore === 4 || computerScore === 4) {
+    
+    let playerSelection = button.textContent;
+    const computerSelection = getComputerChoice();
+    let roundResult = playRound(playerSelection, computerSelection);
+    playerScoreText.textContent = `Player score: ${playerScore}`;
+    playerResult.textContent = playerSelection;
+    computerScoreText.textContent = `Computer score: ${computerScore}`;
+    computerResult.textContent = computerSelection;
+    finalResult.textContent = roundResult;
+
+    if(playerScore === 5 || computerScore === 5) {
         if (playerScore > computerScore) {
             resultDiv.textContent = playerWin;
             resultDiv.style.color = 'green';
@@ -47,16 +58,7 @@ buttons.forEach(button => button.addEventListener('click', function playGame() {
         }
         gameOver();
     }
-    let playerSelection = button.textContent;
-    const computerSelection = getComputerChoice();
-    let roundResult = playRound(playerSelection, computerSelection);
-    playerScoreText.textContent = `Player score: ${playerScore}`;
-    playerResult.textContent = playerSelection;
-    computerScoreText.textContent = `Computer score: ${computerScore}`;
-    computerResult.textContent = computerSelection;
-    finalResult.textContent = roundResult;
 }));
-
 
 function newGame() {
     playerScoreText.textContent = '';
@@ -109,6 +111,8 @@ function playRound(playerSelection, computerSelection) {
         return "Please enter a valid option";
     }
 }
+
+
 
     // play the game for 5 rounds by looping 5 times and calling the playRound function inside of the loop
     // for (let i = 0; i < 5; i++) {
